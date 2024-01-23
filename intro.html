@@ -16,9 +16,23 @@
             font-family: opensans;
             font-display: swap;
         }
+        @media (min-width: 200px) { 
+            #brand-name{
+                display: block;
+            }
+         }
     </style>
 </head>
-<body class="bg-black flex flex-col items-center justify-center min-h-screen text-white">
-    certifychain
+<body class="bg-black flex flex-col min-h-screen text-white">
+    <div class="h-10 flex items-center gap-1 m-2">
+        <img src="https://avatars.githubusercontent.com/u/146720572" class="w-10">
+        <div class="hidden" id="brand-name">
+            certifychain
+        </div>
+        <div class="grow"></div>
+        <a href="https://github.com/certifychain">
+            <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" class="w-10 rounded-[50%] cursor-pointer">
+        </a>
+    </div>
 </body>
 </html>
