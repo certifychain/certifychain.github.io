@@ -1,2 +1,3 @@
 ## certifychain 
-a blockchain based application
+- a blockchain based application
+- trustworthy
