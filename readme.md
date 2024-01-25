@@ -1,3 +1,3 @@
 ## certifychain 
 - a blockchain based application
-- trustworthy
+- trustworthy ( 100 % fr bro )
