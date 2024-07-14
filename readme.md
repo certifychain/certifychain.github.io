@@ -29,7 +29,7 @@
 #### development
 
 - [ ] build a custom theme for the website
-- [ ] implement a Content Management System (CMS) to simplify content updates
+- [ ] implement a content management system to simplify content updates - probably jekyll
 - [ ] integrate a contact form with email notification
 - [ ] set up a testing environment for staging and deployment
 - [ ] ensure website security
