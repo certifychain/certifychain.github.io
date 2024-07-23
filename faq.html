@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CertifyChain FAQ</title>
+    <link rel="shortcut icon" href="https://github.com/certifychain.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+    <script src="tailwind.css"></script>
+    <style>
+        .hover-animation {
+            transition: all 0.3s ease-in-out;
+        }
+        .hover-animation:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-black flex flex-col items-center justify-center min-h-screen p-5">
+    <div class="hover-animation">
+        <img src="https://github.com/certifychain.png" alt="certifychain" class="w-[250px] max-w-[90vw]">
+    </div>
+    <div class="text-2xl sm:text-3xl text-white hover:text-yellow-300 cursor-pointer hover-animation">
+        CertifyChain
+    </div>
+    <div class="mt-8">
+        <a href="/" class="bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded mr-4">Home</a>
+        <a href="/about" class="bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded mr-4">About</a>
+        <a href="/features" class="bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded mr-4">Features</a>
+        <a href="/faq" class="bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded" aria-current="page">FAQ</a>
+    </div>
+    <div class="max-w-3xl mx-auto mt-8 text-white text-center">
+        <h1 class="text-4xl font-bold mb-4">Frequently Asked Questions</h1>
+        <div x-data="{ openFaq: null }">
+            <div class="mb-4">
+                <div class="bg-green-600 p-4 rounded-md cursor-pointer select-none" @click="openFaq === 1 ? openFaq = null : openFaq = 1">
+                    <h2 class="text-xl font-bold">What is CertifyChain?</h2>
+                    <div x-show="openFaq === 1" x-transition>
+                        <p class="mt-2">CertifyChain is a decentralized certification platform built on blockchain technology. It enables organizations to issue tamper-proof digital certificates to individuals, ensuring the authenticity and integrity of the certification process.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="bg-green-600 p-4 rounded-md cursor-pointer select-none" @click="openFaq === 2 ? openFaq = null : openFaq = 2">
+                    <h2 class="text-xl font-bold">How does CertifyChain ensure the security of certificates?</h2>
+                    <div x-show="openFaq === 2" x-transition>
+                        <p class="mt-2">CertifyChain leverages blockchain technology and IPFS to create tamper-proof and immutable digital certificates. The certificates are stored on a decentralized network, making them resistant to censorship and single-point failures.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="bg-green-600 p-4 rounded-md cursor-pointer select-none" @click="openFaq === 3 ? openFaq = null : openFaq = 3">
+                    <h2 class="text-xl font-bold">Who can issue certificates on CertifyChain?</h2>
+                    <div x-show="openFaq === 3" x-transition>
+                        <p class="mt-2">Any organization or individual can issue certificates on CertifyChain. The platform is open and decentralized, allowing anyone to participate in the certification process without relying on intermediaries.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="bg-green-600 p-4 rounded-md cursor-pointer select-none" @click="openFaq === 4 ? openFaq = null : openFaq = 4">
+                    <h2 class="text-xl font-bold">How can I verify a certificate issued on CertifyChain?</h2>
+                    <div x-show="openFaq === 4" x-transition>
+                        <p class="mt-2">You can verify a certificate issued on CertifyChain by accessing the platform and entering the certificate's unique identifier. The platform will retrieve the certificate from the decentralized network and display its details, allowing you to confirm its authenticity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <div class="bg-green-600 p-4 rounded-md cursor-pointer select-none" @click="openFaq === 5 ? openFaq = null : openFaq = 5">
+                    <h2 class="text-xl font-bold">Is CertifyChain open-source?</h2>
+                    <div x-show="openFaq === 5" x-transition>
+                        <p class="mt-2">Yes, CertifyChain is an open-source project. The source code is available on our GitHub repository, and we welcome contributions from the community to improve and enhance the platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="alpine.js" defer></script>
+</body>
+</html>
