@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{page.title}}</title>
+    <link rel="shortcut icon" href="https://github.com/certifychain.png" type="image/x-icon">
+    <script src="tailwind.css"></script>
+    <style>
+        .hover-animation {
+            transition: all 0.3s ease-in-out;
+        }
+        .hover-animation:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-black flex flex-col items-center justify-center min-h-screen p-5">
+    {% include top.html %}
+    <div class="max-w-3xl mx-auto mt-8 text-white text-center">
+    {{content}}
+    </div>
+</body>
+</html>
