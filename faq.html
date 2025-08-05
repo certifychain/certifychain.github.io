@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CertifyChain FAQ</title>
+  <link rel="shortcut icon" href="https://github.com/certifychain.png" type="image/x-icon" />
+  <script src="tailwind.css"></script>
+  <style>
+    :root {
+      --accent: #facc15; 
+      --accent-hover: #fde047; 
+    }
+    .hover-animation {
+      transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease, opacity 300ms ease;
+    }
+    .hover-animation:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: drop-shadow(0 10px 20px rgba(250, 204, 21, 0.15));
+    }
+    .focus-ring:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.6);
+      border-radius: 0.75rem;
+    }
+    .card-blur {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="bg-black min-h-screen antialiased text-white">
+
+  <div class="pointer-events-none fixed inset-0">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(250,204,21,0.10),rgba(0,0,0,0))]"></div>
+    <div class="absolute inset-0 opacity-[0.06] bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+  </div>
+
+  <main class="relative flex flex-col items-center min-h-screen p-6">
+
+    <header class="flex flex-col items-center mt-8">
+      <a href="/" class="hover-animation block">
+        <img src="https://github.com/certifychain.png" alt="CertifyChain logo" class="w-[120px] sm:w-[150px] md:w-[180px] rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+      </a>
+      <div class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight hover:text-yellow-300 transition-colors cursor-default">
+        CertifyChain
+      </div>
+
+
+      <nav class="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <a href="/" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10">
+          Home
+        </a>
+        <a href="/about" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10">
+          About
+        </a>
+        <a href="/features" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10">
+          Features
+        </a>
+        <a href="/faq" aria-current="page" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-yellow-400/40 bg-yellow-400/10 px-4 py-2 text-sm font-semibold text-yellow-300 hover:bg-yellow-400/20">
+          FAQ
+        </a>
+      </nav>
+    </header>
+
+
+    <section class="mt-10 w-full max-w-3xl">
+      <div class="card-blur rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.35)] text-white">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4 tracking-tight">Frequently Asked Questions</h1>
+
+        <div x-data="{ openFaq: null }" class="space-y-4">
+
+            <div class="rounded-xl border border-white/10 bg-white/5">
+            <button
+              @click="openFaq === 1 ? openFaq = null : openFaq = 1"
+              class="w-full text-left px-4 sm:px-5 py-4 flex items-center justify-between gap-4 focus-ring"
+            >
+              <span class="text-base sm:text-lg font-semibold">What is CertifyChain?</span>
+              <svg :class="openFaq === 1 ? 'rotate-180' : ''" class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+            <div x-show="openFaq === 1" x-collapse x-cloak>
+              <div class="px-4 sm:px-5 pb-4 text-white/80 leading-relaxed">
+                CertifyChain is a decentralized certification platform built on blockchain technology. It enables organizations to issue tamper-proof digital certificates to individuals, ensuring the authenticity and integrity of the certification process.
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-white/10 bg-white/5">
+            <button
+              @click="openFaq === 2 ? openFaq = null : openFaq = 2"
+              class="w-full text-left px-4 sm:px-5 py-4 flex items-center justify-between gap-4 focus-ring"
+            >
+              <span class="text-base sm:text-lg font-semibold">How does CertifyChain ensure the security of certificates?</span>
+              <svg :class="openFaq === 2 ? 'rotate-180' : ''" class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+            <div x-show="openFaq === 2" x-collapse x-cloak>
+              <div class="px-4 sm:px-5 pb-4 text-white/80 leading-relaxed">
+                CertifyChain leverages blockchain technology and IPFS to create tamper-proof and immutable digital certificates. The certificates are stored on a decentralized network, making them resistant to censorship and single-point failures.
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-white/10 bg-white/5">
+            <button
+              @click="openFaq === 3 ? openFaq = null : openFaq = 3"
+              class="w-full text-left px-4 sm:px-5 py-4 flex items-center justify-between gap-4 focus-ring"
+            >
+              <span class="text-base sm:text-lg font-semibold">Who can issue certificates on CertifyChain?</span>
+              <svg :class="openFaq === 3 ? 'rotate-180' : ''" class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+            <div x-show="openFaq === 3" x-collapse x-cloak>
+              <div class="px-4 sm:px-5 pb-4 text-white/80 leading-relaxed">
+                Any organization or individual can issue certificates on CertifyChain. The platform is open and decentralized, allowing anyone to participate in the certification process without relying on intermediaries.
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-white/10 bg-white/5">
+            <button
+              @click="openFaq === 4 ? openFaq = null : openFaq = 4"
+              class="w-full text-left px-4 sm:px-5 py-4 flex items-center justify-between gap-4 focus-ring"
+            >
+              <span class="text-base sm:text-lg font-semibold">How can I verify a certificate issued on CertifyChain?</span>
+              <svg :class="openFaq === 4 ? 'rotate-180' : ''" class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+            <div x-show="openFaq === 4" x-collapse x-cloak>
+              <div class="px-4 sm:px-5 pb-4 text-white/80 leading-relaxed">
+                You can verify a certificate issued on CertifyChain by accessing the platform and entering the certificate's unique identifier. The platform will retrieve the certificate from the decentralized network and display its details, allowing you to confirm its authenticity.
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl border border-white/10 bg-white/5">
+            <button
+              @click="openFaq === 5 ? openFaq = null : openFaq = 5"
+              class="w-full text-left px-4 sm:px-5 py-4 flex items-center justify-between gap-4 focus-ring"
+            >
+              <span class="text-base sm:text-lg font-semibold">Is CertifyChain open-source?</span>
+              <svg :class="openFaq === 5 ? 'rotate-180' : ''" class="h-5 w-5 transition-transform" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/>
+              </svg>
+            </button>
+            <div x-show="openFaq === 5" x-collapse x-cloak>
+              <div class="px-4 sm:px-5 pb-4 text-white/80 leading-relaxed">
+                Yes, CertifyChain is an open-source project. The source code is available on our GitHub repository, and we welcome contributions from the community to improve and enhance the platform.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <a href="https://github.com/certifychain/certifychain" target="_blank" rel="noopener noreferrer" class="focus-ring hover-animation inline-flex items-center rounded-xl bg-yellow-400 px-5 py-2.5 font-semibold text-black hover:bg-yellow-300">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="mt-8 mb-6 text-xs text-white/50">
+      © <span id="year"></span> CertifyChain. Open-source and community-driven.
+    </footer>
+  </main>
+
+  <script src="alpine.js" defer></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

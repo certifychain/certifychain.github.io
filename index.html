@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CertifyChain - Decentralized Certification Platform</title>
+  <link rel="shortcut icon" href="https://github.com/certifychain.png" type="image/x-icon" />
+  <script src="tailwind.css"></script>
+  <style>
+    :root {
+      --accent: #facc15; 
+      --accent-hover: #fde047; 
+    }
+    .hover-animation {
+      transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease, opacity 300ms ease;
+    }
+    .hover-animation:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: drop-shadow(0 10px 20px rgba(250, 204, 21, 0.15));
+    }
+    .focus-ring:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.6);
+      border-radius: 0.75rem;
+    }
+    .card-blur {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="bg-black min-h-screen antialiased text-white">
+
+  <div class="pointer-events-none fixed inset-0">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(250,204,21,0.10),rgba(0,0,0,0))]"></div>
+    <div class="absolute inset-0 opacity-[0.06] bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+  </div>
+
+  <main class="relative flex flex-col items-center justify-center min-h-screen p-6">
+
+    <div class="hover-animation mb-4">
+      <img src="https://github.com/certifychain.png" alt="CertifyChain logo" class="w-[140px] sm:w-[180px] md:w-[220px] rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+    </div>
+
+    <div class="text-3xl sm:text-4xl font-semibold tracking-tight hover:text-yellow-300 transition-colors cursor-default">
+      CertifyChain
+    </div>
+
+    <nav class="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+      <a href="/about" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10">
+        About
+      </a>
+      <a href="/features" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10">
+        Features
+      </a>
+      <a href="/faq" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10">
+        FAQ
+      </a>
+    </nav>
+
+    <section class="mt-10 w-full max-w-3xl">
+      <div class="card-blur rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.35)]">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-3 tracking-tight">
+          Decentralized Certification Platform
+        </h1>
+        <p class="text-white/80 leading-relaxed">
+          Welcome to CertifyChain, an open-source, decentralized certification platform built on blockchain technology. Our mission is to create a transparent, secure, and community-driven platform for issuing, verifying, and managing digital certificates.
+        </p>
+        <p class="text-white/80 leading-relaxed mt-4">
+          CertifyChain enables organizations to issue digital certificates to individuals, ensuring authenticity and integrity. By leveraging blockchain, certifications are recorded in a secure, transparent, and tamper-proof way.
+        </p>
+        <p class="text-white/80 leading-relaxed mt-4">
+          We believe certification should be community-driven and free from centralized control. Decentralization ensures certificates are immutable and auditable, while individuals retain full control over their credentials.
+        </p>
+        <p class="text-white/80 leading-relaxed mt-4">
+          Certificates are hosted via IPFS as NFTs, decentralizing storage and resisting censorship and single-point failures.
+        </p>
+
+        <div class="mt-6">
+          <a href="/donate" class="focus-ring hover-animation inline-flex items-center rounded-xl bg-yellow-400 px-5 py-2.5 font-semibold text-black hover:bg-yellow-300">
+            Donate
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="mt-8 text-xs text-white/50">
+      © <span id="year"></span> CertifyChain. Open-source and community-driven.
+    </footer>
+  </main>
+
+  <script>
+    
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

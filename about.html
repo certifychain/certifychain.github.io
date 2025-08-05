@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About CertifyChain</title>
+  <link rel="shortcut icon" href="https://github.com/certifychain.png" type="image/x-icon" />
+  <script src="tailwind.css"></script>
+  <style>
+    :root {
+      --accent: #facc15; 
+      --accent-hover: #fde047; 
+    }
+    .hover-animation {
+      transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease, opacity 300ms ease;
+    }
+    .hover-animation:hover {
+      transform: translateY(-2px) scale(1.04);
+      filter: drop-shadow(0 10px 20px rgba(250, 204, 21, 0.15));
+    }
+    .focus-ring:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.6);
+      border-radius: 0.75rem;
+    }
+    .card-blur {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body class="bg-black min-h-screen antialiased text-white">
+
+  <div class="pointer-events-none fixed inset-0">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(250,204,21,0.10),rgba(0,0,0,0))]"></div>
+    <div class="absolute inset-0 opacity-[0.06] bg-[linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(0deg,rgba(255,255,255,0.12)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+  </div>
+
+  <main class="relative flex flex-col items-center min-h-screen p-6">
+
+    <header class="flex flex-col items-center mt-8">
+      <a href="/" class="hover-animation block">
+        <img src="https://github.com/certifychain.png" alt="CertifyChain logo" class="w-[120px] sm:w-[150px] md:w-[180px] rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+      </a>
+      <div class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight hover:text-yellow-300 transition-colors cursor-default">
+        CertifyChain
+      </div>
+
+
+      <nav class="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <a href="/" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10">
+          Home
+        </a>
+        <a href="/about" aria-current="page" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-yellow-400/40 bg-yellow-400/10 px-4 py-2 text-sm font-semibold text-yellow-300 hover:bg-yellow-400/20">
+          About
+        </a>
+        <a href="/features" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10">
+          Features
+        </a>
+        <a href="/faq" class="focus-ring hover-animation inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium hover:bg-white/10">
+          FAQ
+        </a>
+      </nav>
+    </header>
+
+
+    <section class="mt-10 w-full max-w-3xl">
+      <div class="card-blur rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 shadow-[0_10px_40px_rgba(0,0,0,0.35)] text-white">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-3 tracking-tight">About CertifyChain</h1>
+        <p class="text-white/80 leading-relaxed">
+          CertifyChain is a decentralized, open-source platform that aims to revolutionize the way digital certificates are issued, verified, and managed. Our mission is to create a transparent, secure, and community-driven ecosystem for certification, free from central authority control.
+        </p>
+        <p class="text-white/80 leading-relaxed mt-4">
+          We believe that traditional centralized certification systems are prone to issues such as fraud, lack of transparency, and control by intermediaries. CertifyChain addresses these challenges by leveraging blockchain technology and decentralized storage solutions like IPFS.
+        </p>
+
+        <h2 class="text-2xl font-semibold mt-6 mb-2">Our Core Values</h2>
+        <ul class="list-disc list-inside text-white/80 space-y-1">
+          <li><span class="text-white">Transparency:</span> A transparent certification process that is auditable and open to public scrutiny.</li>
+          <li><span class="text-white">Decentralization:</span> Ensuring no single entity controls the certification process.</li>
+          <li><span class="text-white">Community-driven:</span> An open-source project powered by a vibrant community of developers, organizations, and individuals.</li>
+          <li><span class="text-white">Security:</span> Tamper-proof and immutable certificates with integrity at the core.</li>
+        </ul>
+
+        <p class="text-white/80 leading-relaxed mt-4">
+          CertifyChain is more than just a platform; it's a movement towards a more equitable and trustworthy certification ecosystem. Join us in shaping the future of decentralized certification.
+        </p>
+
+        <div class="mt-6">
+          <a href="https://github.com/certifychain/certifychain" target="_blank" rel="noopener noreferrer" class="focus-ring hover-animation inline-flex items-center rounded-xl bg-yellow-400 px-5 py-2.5 font-semibold text-black hover:bg-yellow-300">
+            Contribute
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="mt-8 mb-6 text-xs text-white/50">
+      © <span id="year"></span> CertifyChain. Open-source and community-driven.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
